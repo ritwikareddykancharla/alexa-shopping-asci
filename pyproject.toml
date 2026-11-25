@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "conversa-voice"
+version = "1.0.0"
+description = "ConversaVoice: Multi-Turn Alexa Voice Shopping, Sub-2ms ASCI Sensitive-Content Cascade, and Household Differential Privacy"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Ritwika Reddy Kancharla" }]
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["conversa_voice*"]
