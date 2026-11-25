@@ -4,7 +4,7 @@
 - **Live `/api/health` Endpoint**: https://d3ldlesqaiuhbs.cloudfront.net/api/health
 - **GitHub Repository**: https://github.com/ritwikareddykancharla/alexa-shopping-asci
 
-ConversaVoice is a Python 3.12 application for shared smart speakers and multimodal displays, deployed serverlessly on **Amazon CloudFront + Private S3 (OAC) + AWS Lambda (`python3.12`) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-lite-v1:0` and `us.amazon.nova-micro-v1:0`)**.
+ConversaVoice is a serverless application for shared smart speakers and multimodal displays, deployed serverlessly on **Amazon CloudFront + Private S3 (OAC) + AWS Lambda (serverless) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-lite-v1:0` and `us.amazon.nova-micro-v1:0`)**.
 
 ![ConversaVoice System Architecture](docs/architecture.svg)
 

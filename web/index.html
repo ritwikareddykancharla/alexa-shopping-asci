@@ -1004,7 +1004,7 @@
           <span class="section-kicker">02 · Architecture</span>
           <h2 class="section-title">Architecture</h2>
           <p class="section-desc">
-            Static assets are served by Amazon CloudFront from a private S3 bucket with Origin Access Control, and <code>/api/*</code> routes execute on AWS Lambda Python 3.12 calling Amazon Nova Lite and Amazon Nova Micro. Click any component to inspect its module and measured latency.
+            Static assets are served by Amazon CloudFront from a private S3 bucket with Origin Access Control, and <code>/api/*</code> routes execute on AWS Lambda calling Amazon Nova Lite and Amazon Nova Micro. Click any component to inspect its module and measured latency.
           </p>
         </div>
       </div>
@@ -1035,7 +1035,7 @@
 
           <!-- LAYER 1: EDGE -->
           <path d="M 22,18 Q 610,14 1196,19 Q 1201,92 1195,164 Q 608,168 24,163 Q 19,90 22,18 Z" fill="#F8FAFC" stroke="#0284C7" stroke-width="1.6" stroke-dasharray="8 6" />
-          <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#0284C7">① Echo Show Browser Console &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + Python 3.12 Lambda)</text>
+          <text x="36" y="41" class="svg-title" font-size="21" font-weight="700" fill="#0284C7">① Echo Show Browser Console &amp; Serverless AWS Edge (CloudFront + Private S3 OAC + AWS Lambda)</text>
 
           <g class="arch-node" data-arch-node="edge-echo-ui" tabindex="0">
             <path d="M 38,55 Q 145,52 252,56 Q 256,96 251,138 Q 144,141 39,137 Q 35,95 38,55 Z" fill="#E0F2FE" />
@@ -1072,7 +1072,7 @@
           <g class="arch-node" data-arch-node="edge-lambda" tabindex="0">
             <path d="M 642,100 Q 777,97 912,101 Q 915,127 911,153 Q 776,156 643,152 Q 639,126 642,100 Z" fill="#FEF3C7" />
             <path class="arch-stroke-main" d="M 642,100 Q 777,97 912,101 Q 915,127 911,153 Q 776,156 643,152 Q 639,126 642,100 Z" fill="none" stroke="#18181B" stroke-width="2" />
-            <text x="777" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API (Python 3.12)</text>
+            <text x="777" y="123" text-anchor="middle" class="svg-title" font-size="20" font-weight="700" fill="#18181B">AWS Lambda API</text>
             <text x="777" y="142" text-anchor="middle" class="svg-mono" font-size="9.3" fill="#92400E">conversavoice-api-origin · 512 MB</text>
           </g>
 
@@ -1203,7 +1203,7 @@
           <span class="section-kicker">03 · Implementation</span>
           <h2 class="section-title">Implementation</h2>
           <p class="section-desc">
-            Four Python 3.12 modules implement calibrated content moderation, phonetic voice shopping with SSML compilation, multi-profile SQLite privacy with Rényi DP accounting, and CloudFront Lambda routing.
+            Four backend modules implement calibrated content moderation, phonetic voice shopping with SSML compilation, multi-profile SQLite privacy with Rényi DP accounting, and CloudFront Lambda routing.
           </p>
         </div>
         <span class="tag tag-pass">14 / 14 Unit Tests Passing</span>
@@ -1891,7 +1891,7 @@
           plane: "Layer ① · Echo Show Browser & Serverless Edge",
           title: "Amazon CloudFront HTTPS CDN",
           module: "infra/deploy_cloudfront.sh · Origin Access Control",
-          summary: "Serves static UI files from private S3 and forwards /api/* POST and GET calls to the Python 3.12 AWS Lambda Function URL on one HTTPS origin.",
+          summary: "Serves static UI files from private S3 and forwards /api/* POST and GET calls to the AWS Lambda Function URL on one HTTPS origin.",
           metric: "Unified HTTPS · Zero CORS Friction"
         },
         "edge-s3": {
@@ -1903,10 +1903,10 @@
         },
         "edge-lambda": {
           plane: "Layer ① · Echo Show Browser & Serverless Edge",
-          title: "AWS Lambda Python 3.12 API",
+          title: "AWS Lambda API",
           module: "conversa_voice/server.py :: lambda_handler",
           summary: "Executes /api/voice/turn, /api/asci/moderate, /api/privacy/dp-audit, and /api/privacy/purge on demand with 512 MB memory and 30s timeout.",
-          metric: "Python 3.12 · On-Demand Execution"
+          metric: "AWS Lambda · On-Demand Execution"
         },
         "asci-fastpath": {
           plane: "Layer ② · ASCI Safety Cascade",
