@@ -1,5 +1,7 @@
 # ConversaVoice: Multi-Turn Voice Shopping, Sub-2ms ASCI Safety Cascade & Household Privacy
 
+- **Live CloudFront Studio**: https://d3ldlesqaiuhbs.cloudfront.net
+- **Live `/api/health` Endpoint**: https://d3ldlesqaiuhbs.cloudfront.net/api/health
 - **GitHub Repository**: https://github.com/ritwikareddykancharla/alexa-shopping-asci
 
 ConversaVoice is a Python 3.12 application for shared smart speakers and multimodal displays, deployed serverlessly on **Amazon CloudFront + Private S3 (OAC) + AWS Lambda (`python3.12`) + SQLite WAL + Amazon Bedrock (`us.amazon.nova-lite-v1:0` and `us.amazon.nova-micro-v1:0`)**.
